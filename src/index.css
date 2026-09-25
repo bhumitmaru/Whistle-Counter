@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color:#2c352f; background:#faf9f6; font-synthesis:none; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-weight:400; }
+* { box-sizing:border-box; }
+html { min-width:320px; scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; min-width:320px; min-height:100vh; background:#faf9f6; }
+button,a,input { font:inherit; }
+a { color:inherit; text-decoration:none; }
+p { margin-top:0; }
+h1,h2,h3 { font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+::selection { color:#fff; background:#a94c29; }
+:focus-visible { outline:3px solid #b65330; outline-offset:3px; }
+
+@layer base {
+  :root {
+    --background: 40 25% 98%; --foreground: 150 10% 19%;
+    --card: 40 25% 98%; --card-foreground: 150 10% 19%;
+    --popover: 40 25% 98%; --popover-foreground: 150 10% 19%;
+    --primary: 17 57% 45%; --primary-foreground: 0 0% 100%;
+    --secondary: 40 16% 92%; --secondary-foreground: 150 10% 20%;
+    --muted: 40 16% 93%; --muted-foreground: 150 7% 40%;
+    --accent: 17 50% 52%; --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 45%; --destructive-foreground: 0 0% 100%;
+    --border: 40 12% 85%; --input: 40 12% 85%; --ring: 17 57% 45%; --radius: 1rem;
+    --glass-bg: 40 25% 98% / 0.85; --glass-border: 40 12% 85%; --glass-shadow: 150 10% 19% / 0.08;
+    --glass-blur: 16px; --counter-glow: 17 57% 45% / 0.14;
+    --gradient-warm: linear-gradient(135deg,#a94c29,#d58348);
+  }
+  .dark { --background:30 10% 10%;--foreground:40 20% 95%;--card:30 10% 12%;--card-foreground:40 20% 95%;--popover:30 10% 12%;--popover-foreground:40 20% 95%;--primary:17 57% 55%;--primary-foreground:0 0% 100%;--secondary:30 8% 19%;--secondary-foreground:40 20% 90%;--muted:30 8% 19%;--muted-foreground:40 8% 65%;--accent:17 50% 55%;--accent-foreground:0 0% 100%;--destructive:0 70% 50%;--destructive-foreground:0 0% 100%;--border:30 8% 24%;--input:30 8% 24%;--ring:17 57% 55%;--glass-bg:30 10% 14% / .8;--glass-border:30 8% 24%;--glass-shadow:0 0% 0% / .3; }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; }
+}
+@layer components {
+  .glass-panel { background:hsl(var(--glass-bg)); backdrop-filter:blur(var(--glass-blur)); -webkit-backdrop-filter:blur(var(--glass-blur)); border:1px solid hsl(var(--glass-border)); box-shadow:0 8px 32px hsl(var(--glass-shadow)); }
+  .counter-display { background:hsl(var(--glass-bg)); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid hsl(var(--glass-border)); box-shadow:0 16px 48px hsl(var(--glass-shadow)),0 0 45px hsl(var(--counter-glow)); }
+  .counter-active { box-shadow:0 16px 48px hsl(var(--glass-shadow)),0 0 55px hsl(var(--counter-glow)); }
+}
+@layer utilities { .text-gradient { background:var(--gradient-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; } }
+@keyframes pulse-glow { 0%,100%{box-shadow:0 16px 48px hsl(var(--glass-shadow)),0 0 45px hsl(var(--counter-glow))} 50%{box-shadow:0 16px 48px hsl(var(--glass-shadow)),0 0 65px hsl(var(--counter-glow))} }
+@keyframes whistle-detected { 0%{transform:scale(1)} 50%{transform:scale(1.04)} 100%{transform:scale(1)} }
+.animate-pulse-glow { animation:pulse-glow 2s ease-in-out infinite; }
+.animate-whistle { animation:whistle-detected .3s ease-out; }
