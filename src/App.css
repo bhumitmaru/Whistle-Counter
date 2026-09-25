@@ -56,7 +56,6 @@
 .counter-card .counter-tools { width:100%; max-width:360px; margin:0 auto; }
 .counter-card .glass-panel { background:#f4f1eb; border:1px solid #e5e0d7; box-shadow:none; }
 .counter-card button:focus-visible,.counter-card [role="switch"]:focus-visible { outline:3px solid #b8522f; outline-offset:3px; }
-.counter-card .text-gradient { background:linear-gradient(135deg,#a94c29,#d58348); }
 .counter-card .text-muted-foreground { color:#61675f; }
 .privacy-note { max-width:800px; margin:21px auto 0; color:#626960; text-align:center; font-size:12px; line-height:1.6; display:flex; align-items:center; justify-content:center; gap:7px; }
 .privacy-note svg { flex:none; }
