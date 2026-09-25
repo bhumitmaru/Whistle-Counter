@@ -7,7 +7,7 @@ const questions = [
   ["Will it catch every whistle?", "It may miss a whistle or mistake another sound for one. Phone microphones, distance, background noise, and room acoustics all affect detection. Treat the count as a reminder, not a guarantee."],
   ["Why did my browser block the microphone?", "Microphone access generally requires a secure connection (HTTPS) and your permission. Check the site permissions in your browser, then try again."],
   ["Can I use it with the screen locked or another app open?", "Keep this page open and visible for the most reliable results. Browsers may pause microphone processing when a tab is backgrounded or the device sleeps."],
-  ["How do I get help?", "A support email or contact destination has not been configured for this project yet. Add a real support address before publishing if you want visitors to contact you."],
+  ["How do I get help?", "You can contact the owner on LinkedIn or email Bhumit at marubhumit0312@gmail.com for help or feedback."],
 ];
 
 export default function FAQ() {
