@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# Android / Gradle
+android/.gradle
+android/build
+android/local.properties
+android/app/build
+android/captures
+*.keystore
+!debug.keystore

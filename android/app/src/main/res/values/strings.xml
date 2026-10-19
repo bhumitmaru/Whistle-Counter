@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Whistle Counter</string>
+    <string name="notification_channel_listening">Listening status</string>
+    <string name="notification_channel_alarm">Whistle alarm</string>
+    <string name="notification_channel_error">Microphone errors</string>
+    <string name="notification_channel_listening_description">Shown while the counter is listening in the background.</string>
+    <string name="notification_channel_alarm_description">Alerts when your whistle target is reached.</string>
+</resources>
