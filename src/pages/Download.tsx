@@ -1,4 +1,5 @@
-import { BellRing, Download as DownloadIcon, Gauge, Lock, PackageCheck, ShieldCheck, Smartphone } from "lucide-react";
+import { BellRing, Download as DownloadIcon, Gauge, Globe, Lock, PackageCheck, Share2, ShieldCheck, Smartphone } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Seo } from "@/components/Seo";
 
@@ -18,7 +19,19 @@ const installSteps = [
   { icon: BellRing, title: "Open Whistle Counter", body: "Set your whistle target, press start, and let the app listen in the background — screen off, other apps open, alarm ready." },
 ];
 
+const iosSteps = [
+  { icon: Globe, title: "Open in Safari", body: "Open the Whistle Counter site on your iPhone or iPad. Add to Home Screen is a Safari feature, so start there." },
+  { icon: Share2, title: "Add to Home Screen", body: "Tap the Share button in the toolbar, scroll down, and choose Add to Home Screen. Name it and add." },
+  { icon: Smartphone, title: "Open it like an app", body: "Launch Whistle Counter from your home screen. It opens full screen — no browser bars — and remembers your whistle target." },
+];
+
 export default function Download() {
+  const [isAppleMobile, setIsAppleMobile] = useState(false);
+  useEffect(() => {
+    const isIPadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+    setIsAppleMobile(/iPhone|iPad|iPod/.test(navigator.userAgent) || isIPadOS);
+  }, []);
+
   return <>
     <Seo title="Download the app | Whistle Counter" description="Get the Whistle Counter Android app. Whistle detection, background listening, and a full alarm even when the screen is off." />
     <section className="page-hero" aria-labelledby="download-title">
@@ -60,6 +73,30 @@ export default function Download() {
       <div>
         <h2>Everything stays on your phone</h2>
         <p>The app runs entirely on your device. No account, no audio uploads, and whistle counting keeps working with the screen off or another app in front.</p>
+      </div>
+    </section>
+
+    <section className="content-section prose" aria-labelledby="ios-title">
+      <h2 id="ios-title">Using an iPhone or iPad?</h2>
+      <p>APK files are Android-only — Apple doesn’t let apps be installed from the web. The good news: this site installs to your iPhone’s home screen and behaves just like an app. {isAppleMobile && "You appear to be viewing this on an Apple device, so skip the Android steps above and follow these instead — no download needed."}</p>
+    </section>
+
+    <section className="content-section steps-detail" aria-label="How to install on iPhone">
+      {iosSteps.map(({ icon: Icon, title, body }, index) => (
+        <article className="detail-step" key={title}>
+          <span className="detail-icon"><Icon aria-hidden="true" /></span>
+          <span className="step-number">STEP 0{index + 1}</span>
+          <h2>{title}</h2>
+          <p>{body}</p>
+        </article>
+      ))}
+    </section>
+
+    <section className="content-callout">
+      <Smartphone aria-hidden="true" />
+      <div>
+        <h2>One iPhone thing to know</h2>
+        <p>Safari pauses microphone access when the screen locks or another app takes focus. Keep the counter in front and the screen awake while your cooker runs. For hands-off, screen-off listening, the Android app is the better fit.</p>
       </div>
     </section>
 

@@ -7,6 +7,7 @@ const questions = [
   ["Will it catch every whistle?", "It may miss a whistle or mistake another sound for one. Phone microphones, distance, background noise, and room acoustics all affect detection. Treat the count as a reminder, not a guarantee."],
   ["Why did my browser block the microphone?", "Microphone access generally requires a secure connection (HTTPS) and your permission. Check the site permissions in your browser, then try again."],
   ["Can I use it with the screen locked or another app open?", "Keep this page open and visible for the most reliable results. Browsers may pause microphone processing when a tab is backgrounded or the device sleeps."],
+  ["Can I use it on my phone?", "On Android, download the APK from the Download page — it counts whistles with the screen off and can ring the phone's alarm. On iPhone or iPad, open the site in Safari, tap Share, and choose Add to Home Screen — it then behaves like an installed app."],
   ["How do I get help?", "You can contact the owner on LinkedIn or email Bhumit at marubhumit0312@gmail.com for help or feedback."],
 ];
 
