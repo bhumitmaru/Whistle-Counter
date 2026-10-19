@@ -8,7 +8,7 @@
     "build": "vite build",
     "postbuild": "node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",
-    "lint": "eslint .",
+    "lint": "eslint -c configs/eslint.config.js .",
     "preview": "vite preview"
   },
   "dependencies": {

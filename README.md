@@ -23,6 +23,7 @@ A browser-based and Android application that automatically detects and counts pr
 | `src/` | Web app — React + TypeScript + Vite |
 | `android/` | Native Android app — Kotlin + Jetpack Compose (see [android/README.md](android/README.md)) |
 | `public/apk/` | Pre-built release APK (`Whistle-Counter-v1.0.0.apk`) |
+| `configs/` | Tooling config — Tailwind and ESLint |
 | `scripts/` | Post-build prerendering for GitHub Pages SEO |
 | `.github/workflows/` | Deploy-to-GitHub-Pages workflow |
 
